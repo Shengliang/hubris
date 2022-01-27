@@ -16,8 +16,16 @@ extern crate panic_itm; // breakpoint on `rust_begin_unwind` to catch panics
 #[cfg(feature = "panic-semihosting")]
 extern crate panic_semihosting; // requires a debugger
 
+use abi::{ImageHeader, SAUEntry, HEADER_MAGIC};
 use cortex_m_rt::entry;
 use lpc55_pac as device;
+#[used]
+#[link_section = ".image_header"]
+static HEADER: ImageHeader = ImageHeader {
+    magic: HEADER_MAGIC,
+    total_image_len: 0,
+    sau_entries: [SAUEntry { rbar: 0, rlar: 0 }; 8],
+};
 
 #[cfg(feature = "plls")]
 fn setup_clocks() {
