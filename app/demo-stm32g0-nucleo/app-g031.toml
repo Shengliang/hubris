@@ -59,7 +59,7 @@ path = "../../drv/user-leds"
 name = "drv-user-leds"
 features = ["stm32g0"]
 priority = 3
-requires = {flash = 2048, ram = 256}
+requires = {flash = 8192, ram = 256}
 start = true
 task-slots = ["sys"]
 stacksize = 256
