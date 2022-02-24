@@ -216,7 +216,7 @@ fn muck_with_gpios(syscon: &Syscon) {
     ];
 
     for (pin, alt, mode, slew, invert, digi, od) in
-        core::array::IntoIter::new(pin_settings)
+        IntoIterator::into_iter(pin_settings)
     {
         iocon
             .iocon_configure(pin, alt, mode, slew, invert, digi, od)

@@ -61,11 +61,11 @@ where
     S: pac::RegisterSpec<Ux = u32> + pac::Readable + pac::Writable,
 {
     unsafe fn set_bit(&self, index: u8) {
-        self.modify(|r, w| unsafe { w.bits(r.bits() | 1 << index) });
+        self.modify(|r, w| w.bits(r.bits() | 1 << index));
     }
 
     unsafe fn clear_bit(&self, index: u8) {
-        self.modify(|r, w| unsafe { w.bits(r.bits() & !(1 << index)) });
+        self.modify(|r, w| w.bits(r.bits() & !(1 << index)));
     }
 }
 

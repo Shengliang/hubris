@@ -4,7 +4,8 @@
 
 #![no_std]
 #![no_main]
-#![feature(asm)]
+
+use core::arch::asm;
 
 use userlib::*;
 

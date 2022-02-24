@@ -6,6 +6,8 @@
 
 use lpc55_romapi::FlashStatus;
 
+use core::arch::asm;
+
 // FlashStatus is represented as a u32 so it's safe to return directly.
 // We convert on the receiving end for safety
 // #[cmse_nonsecure_entry] We want this eventually

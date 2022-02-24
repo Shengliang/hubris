@@ -27,7 +27,8 @@
 //!    most clever algorithms used in kernels wind up requiring `unsafe`.)
 
 #![cfg_attr(target_os = "none", no_std)]
-#![feature(asm)]
+#![feature(asm_sym)]
+#![feature(asm_const)]
 #![feature(naked_functions)]
 
 #[macro_use]
