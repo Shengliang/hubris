@@ -87,6 +87,10 @@ size = 0x400
 address = 0x48021400
 size = 4096
 
+[system_flash]
+address = 0x1FF00000
+size = 0x20000
+
 #[rng]
 #address = 0x48021800
 #size = 4096
