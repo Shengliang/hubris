@@ -234,3 +234,13 @@ input = {port = "E", pin = 12, af = 5}
 [config.spi.spi6.devices.spi6_header]
 mux = "port_g"
 cs = {port = "G", pin = 8}
+
+[config.user_leds]
+count = 4
+leds = [
+    ["drv_stm32xx_sys_api::Port::C.pin(6)", true],
+    ["drv_stm32xx_sys_api::Port::I.pin(8)", false],
+    ["drv_stm32xx_sys_api::Port::I.pin(9)", false],
+    ["drv_stm32xx_sys_api::Port::I.pin(10)", false],
+    ["drv_stm32xx_sys_api::Port::I.pin(11)", false],
+]
